@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0d0d0d">
+<title>The Digital Ocean — How DOGE Did Not Drain the Swamp</title>
+<meta name="description" content="Interactive evidence board for THE DIGITAL OCEAN by Kyle Jimenez. 30+ filed documents across Federal Register, SEC, NARA, Vatican, Senate records. Every pin is a primary source.">
+<meta property="og:title" content="THE DIGITAL OCEAN — The Evidence Board">
+<meta property="og:description" content="Interactive companion to the book by Kyle Jimenez. Drag the board. Pull a thread. Every pin is a primary source.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zombie760.github.io/digital-ocean/corkboard/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="THE DIGITAL OCEAN — The Evidence Board">
+<meta name="twitter:description" content="Interactive companion to the book by Kyle Jimenez. Drag the board. Pull a thread.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Lora:ital,wght@0,400;0,600;1,400&family=Kalam:wght@300;400;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Architects+Daughter&family=Inter:wght@400;600&family=Oswald:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root {
+  --wall-bg: #0d0d0d;
+  --wall-concrete: #1a1a1a;
+  --wall-brick: #2d2520;
+  --paper-basement: #e8e0d0;
+  --paper-aged: #c4b8a8;
+  --paper-yellow: #d4c4a0;
+  --ink-black: #050505;
+  --ink-blood: #8b0000;
+  --spray-red: #ff2a2a;
+  --spray-silver: #c0c0c0;
+  --neon-green: #39ff14;
+  --chain-orange: #ff6b00;
+  --marker-black: #1a1a1a;
+  --concrete-gray: #4a4a4a;
+  --rust: #8b4513;
+  --graffiti-purple: #800080;
+  --string: #ff0000;
+  --string-hi: #ff4444;
+  --string-doc: #8b0000;
+  --ui-bg: #080808;
+  --ui-text: #d4d0c8;
+  --ui-accent: #ff2a2a;
+  --ui-panel: #121212;
+}
+* { box-sizing: border-box; touch-action: manipulation; }
+html, body { margin: 0; padding: 0; height: 100%; overflow: hidden;
+  font-family: "Lora", Georgia, serif; background: #0f0a06; color: var(--ui-text); }
+.noselect {
+  -webkit-touch-callout: none; -webkit-user-select: none;
+  -khtml-user-select: none; -moz-user-select: none;
+  -ms-user-select: none; user-select: none;
+}
+#stage {
+  position: fixed; inset: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(128,0,128,0.03) 100px, rgba(128,0,128,0.03) 102px),
+    repeating-linear-gradient(-45deg, transparent, transparent 150px, rgba(255,0,0,0.02) 150px, rgba(255,0,0,0.02) 152px),
+    radial-gradient(ellipse at 30% 20%, rgba(139,69,19,0.15), transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(0,0,0,0.4), transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(40,30,20,0.6), transparent 60%),
+    linear-gradient(180deg, #1a1510 0%, #0f0a06 30%, #0a0805 70%, #12100a 100%);
+  overflow: hidden; cursor: grab; z-index: 1;
+}
+#stage:active { cursor: grabbing; }
+#world { position: absolute; transform-origin: 0 0; will-change: transform; }
+#edges { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+#cards { position: absolute; z-index: 10; }
+.card {
+  position: absolute; width: 280px;
+  background: var(--paper-basement);
+  color: var(--ink-black);
+  font-family: "Lora", Georgia, serif;
+  padding: 0; border-radius: 2px;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.15),
+    0 3px 8px rgba(0,0,0,0.12),
+    0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer; z-index: 10;
+}
+.card:hover { transform: translateY(-4px) rotate(0.5deg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 12px 32px rgba(0,0,0,0.15); z-index: 20; }
+.card.cdcr-id { width: 260px; background: linear-gradient(135deg, #f5f0e8 0%, #e8e0d0 100%); padding: 0; border: 2px solid #333; }
+.card-header { padding: 16px 16px 8px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+.card-title { font-family: "Oswald", sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-black); margin: 0 0 4px; line-height: 1.2; }
+.card-subtitle { font-family: "Courier Prime", monospace; font-size: 10px; color: #666; margin: 0; letter-spacing: 0.05em; }
+.card-body { padding: 12px 16px 16px; font-size: 12px; line-height: 1.6; color: var(--ink-black); }
+.card-footer { padding: 8px 16px 12px; border-top: 1px solid rgba(0,0,0,0.06); font-family: "Courier Prime", monospace; font-size: 9px; color: #666; letter-spacing: 0.03em; }
+.cdcr-header { background: #1a1a1a; color: #fff; padding: 8px 12px; font-family: "Oswald", sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; }
+.cdcr-photo { width: 100%; height: 180px; background: linear-gradient(135deg, #d4c4a0 0%, #c4b8a8 100%); display: flex; align-items: center; justify-content: center; font-family: "Special Elite", cursive; font-size: 48px; color: #888; }
+.cdcr-info { padding: 12px; }
+.cdcr-name { font-family: "Oswald", sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-black); margin: 0 0 4px; }
+.cdcr-details { font-family: "Courier Prime", monospace; font-size: 10px; color: #666; line-height: 1.5; }
+.cdcr-stamp { position: absolute; bottom: 8px; right: 8px; font-family: "Special Elite", cursive; font-size: 10px; color: var(--ink-blood); transform: rotate(-12deg); opacity: 0.7; }
+.pin { position: absolute; width: 8px; height: 8px; border-radius: 50%; z-index: 15; pointer-events: none; }
+.pin.red { background: radial-gradient(circle at 30% 30%, #ff4444, #aa0000); box-shadow: 0 0 4px rgba(255,0,0,0.4); }
+.pin.yellow { background: radial-gradient(circle at 30% 30%, #ffaa00, #cc5500); box-shadow: 0 0 4px rgba(255,170,0,0.4); }
+.string { stroke: var(--string); stroke-width: 1.5; fill: none; opacity: 0.6; pointer-events: none; }
+.string.doc { stroke: var(--string-doc); stroke-width: 1; stroke-dasharray: 4 3; opacity: 0.5; }
+#topbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  padding: 12px 20px;
+  display: flex; gap: 16px; align-items: center;
+  z-index: 500;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(15,15,15,0.95) 0%, rgba(15,15,15,0) 100%);
+}
+#topbar > * { pointer-events: auto; }
+#bottombar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  padding: 10px 20px;
+  display: flex; gap: 20px; justify-content: center; align-items: center;
+  z-index: 500;
+  background: linear-gradient(0deg, rgba(15,15,15,0.95) 0%, rgba(15,15,15,0) 100%);
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+#bottombar a { color: #d4cfc4; text-decoration: none; transition: color 0.2s; pointer-events: auto; }
+#bottombar a:hover { color: var(--spray-red); }
+#bottombar .sep { color: #555; pointer-events: none; }
+#title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #d4cfc4;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+}
+#title::before { content: "⚠ "; color: var(--spray-red); }
+.btn {
+  font-family: "Oswald", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(20,20,20,0.85);
+  border: 1px solid #333;
+  color: #d4cfc4;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn:hover { background: rgba(40,30,20,0.9); border-color: var(--spray-red); color: var(--spray-red); }
+#zoom-indicator { font-family: "Courier Prime", monospace; font-size: 11px; color: #888; min-width: 40px; text-align: center; }
+#info-panel {
+  position: fixed; top: 80px; right: 20px; width: 340px;
+  background: rgba(15,15,15,0.95);
+  border: 1px solid #333;
+  padding: 20px;
+  z-index: 600;
+  display: none;
+  max-height: 70vh; overflow-y: auto;
+}
+#info-panel h3 { font-family: "Oswald", sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--spray-red); margin: 0 0 12px; }
+#info-panel p { font-family: "Lora", serif; font-size: 12px; line-height: 1.7; color: #d4cfc4; margin: 0 0 12px; }
+#info-panel .citation { font-family: "Courier Prime", monospace; font-size: 9px; color: #888; border-left: 2px solid var(--spray-red); padding-left: 8px; margin-top: 12px; }
+#tour-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 800; display: none; align-items: center; justify-content: center; flex-direction: column; }
+#tour-overlay.active { display: flex; }
+#tour-content { max-width: 600px; text-align: center; padding: 40px; }
+#tour-content h2 { font-family: "Playfair Display", serif; font-size: 28px; font-style: italic; color: #d4cfc4; margin: 0 0 16px; }
+#tour-content p { font-family: "Lora", serif; font-size: 14px; line-height: 1.8; color: #b8ac90; margin: 0 0 24px; }
+#tour-controls { position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%); z-index: 900; display: none; gap: 12px; }
+#tour-controls.active { display: flex; }
+#intro { position: fixed; inset: 0; background: #0a0a0a; z-index: 1000; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+#intro-content { text-align: center; padding: 40px; }
+#intro-title { font-family: "Playfair Display", serif; font-size: 32px; font-style: italic; color: #d4cfc4; margin: 0 0 16px; min-height: 48px; }
+#intro-subtitle { font-family: "Oswald", sans-serif; font-size: 12px; letter-spacing: 3px; color: var(--spray-red); text-transform: uppercase; opacity: 0; transition: opacity 1s; }
+#intro-subtitle.visible { opacity: 1; }
+#intro-author { font-family: "Lora", serif; font-size: 14px; color: #888; margin-top: 8px; opacity: 0; transition: opacity 1s; }
+#intro-author.visible { opacity: 1; }
+@media (max-width: 768px) {
+  #info-panel { width: calc(100% - 40px); right: 20px; top: 60px; }
+  .card { width: 240px; }
+  #title { font-size: 14px; }
+  .btn { padding: 6px 10px; font-size: 9px; }
+}
+</style>
+</head>
+<body class="noselect">
+
+<div id="intro">
+  <div id="intro-content">
+    <p id="intro-title"></p>
+    <p id="intro-subtitle">THE DIGITAL OCEAN — How DOGE Did Not Drain the Swamp</p>
+    <p id="intro-author">Kyle Jimenez</p>
+  </div>
+</div>
+
+<div id="stage">
+  <div id="world">
+    <svg id="edges" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div id="cards"></div>
+  </div>
+</div>
+
+<div id="topbar">
+  <div id="title">The Digital Ocean <small>Evidence Board</small></div>
+  <div style="flex:1"></div>
+  <button class="btn zoom" id="zoom-out">-</button>
+  <div id="zoom-indicator">100%</div>
+  <button class="btn zoom" id="zoom-in">+</button>
+  <button class="btn" id="reset-view">Reset</button>
+  <button class="btn" id="tour-trigger">Tour</button>
+</div>
+
+<div id="info-panel">
+  <h3 id="info-title"></h3>
+  <div id="info-body" style="font-family:'Lora',serif;font-size:12px;line-height:1.7;color:#d4cfc4;margin:0 0 12px;"></div>
+  <div class="citation" id="info-citation"></div>
+</div>
+
+<div id="tour-overlay">
+  <div id="tour-content">
+    <h2 id="tour-title"></h2>
+    <p id="tour-desc"></p>
+    <button class="btn" id="tour-next">Continue →</button>
+  </div>
+</div>
+<div id="tour-controls">
+  <button class="btn" id="tour-prev">← Prev</button>
+  <button class="btn" id="tour-close">Close</button>
+  <button class="btn" id="tour-next-btn">Next →</button>
+</div>
+
+<div id="bottombar">
+  <a href="https://gringo1904.substack.com" target="_blank" rel="noopener">Substack</a>
+  <span class="sep">|</span>
+  <a href="https://gringo1904.gumroad.com" target="_blank" rel="noopener">Gumroad</a>
+  <span class="sep">|</span>
+  <a href="https://github.com/Zombie760/digital-ocean" target="_blank" rel="noopener">GitHub</a>
+</div>
+
+<script>
+(function() {
+  "use strict";
+
+  var PINS = [
+    { id:"p001", type:"person", name:"Elon Musk", years:"1971-", role:"Tesla CEO; DOGE architect; SpaceX founder. South African / US dual posture.", x:0, y:50 },
+    { id:"p002", type:"person", name:"Donald J. Trump", years:"1946-", role:"47th U.S. President. Signed EO 14158 establishing D.O.G.E., Jan 20 2025.", x:200, y:100 },
+    { id:"p003", type:"person", name:"Leo T. Crowley", years:"1889-1972", role:"Alien Property Custodian. Signed Vesting Orders 248, 261, 370 seizing Bush-linked entities.", x:-300, y:100 },
+    { id:"p004", type:"person", name:"Prescott Bush", years:"1895-1972", role:"Union Banking Corporation director. Seized under Vesting Order 248, Oct 20 1942.", x:-500, y:50 },
+    { id:"p005", type:"person", name:"Sen. Elizabeth Warren", years:"1949-", role:"Author, '130 Days of Elon Musk' — Senate oversight report, June 3 2025.", x:400, y:50 },
+    { id:"p006", type:"person", name:"Alex Karp", years:"1967-", role:"Palantir CEO. Board member per SEC S-1 2020. $1.2M salary.", x:600, y:100 },
+    { id:"p007", type:"person", name:"Akash Bobba", years:"", role:"D.O.G.E. detail lead. GS-15. Accessed SSA master database. Signal-protocol handoff to SpaceX.", x:200, y:300 },
+
+    { id:"i001", type:"institution", name:"Department of Government Efficiency (D.O.G.E.)", desc:"EO 14158, Jan 20 2025. 90 Fed. Reg. 8441. H.R. 3411 enabling legislation. Engineers detailed to SSA.", related:["p002","p007"], x:100, y:200 },
+    { id:"i002", type:"institution", name:"Tesla, Inc.", desc:"SEC 10-K filings 2020-2023. $2.8B revenue 2025. $0 federal tax per ITEP. CARB ZEV program beneficiary.", related:["p001"], x:-100, y:200 },
+    { id:"i003", type:"institution", name:"Union Banking Corporation", desc:"Seized under Vesting Order 248, 7 Fed. Reg. 9097. Prescott Bush director. German-national-linked financing.", related:["p003","p004"], x:-400, y:200 },
+    { id:"i004", type:"institution", name:"Silesian-American Corporation", desc:"Seized under Vesting Order 370, Mar 23 1943. 8 Fed. Reg. NARA RG 131.", related:["p003"], x:-600, y:200 },
+    { id:"i005", type:"institution", name:"Holland-American Trading Corporation", desc:"Seized under Vesting Order 261, Oct 28 1942. 7 Fed. Reg. NARA RG 131.", related:["p003"], x:-500, y:300 },
+    { id:"i006", type:"institution", name:"PJM Interconnection", desc:"Regional transmission organization. 2025/26 Base Residual Auction Report, Jul 30 2024. Capacity-market regulator.", related:["p001"], x:-100, y:350 },
+    { id:"i007", type:"institution", name:"Social Security Administration", desc:"Master database accessed by D.O.G.E. detail. Terms of Service Section 1.3: 'we reserve the right to retain.'", related:["p007","i001"], x:300, y:350 },
+    { id:"i008", type:"institution", name:"SpaceX", desc:"Shadow server infrastructure. Received SSA metadata handoff per Politico leak Jan 15 2026.", related:["p001"], x:500, y:200 },
+    { id:"i009", type:"institution", name:"Palantir Technologies", desc:"SEC S-1 Reg. 333-240881, Sept 2020. $10B Army contract W52P1J-25-C-0001, Aug 2025.", related:["p006"], x:700, y:200 },
+    { id:"i010", type:"institution", name:"U.S. Energy Information Administration", desc:"AEO 2024 Reference Case, Tables A2 and A8. Form EIA-860 2023 reporting cycle.", related:["p001"], x:-200, y:450 },
+
+    { id:"e001", type:"event", name:"Executive Order 14158", date:"Jan 20 2025", desc:"Establishing D.O.G.E. 90 Fed. Reg. 8441. Trump signature. Engineers detailed to SSA.", source:"Federal Register", x:100, y:450 },
+    { id:"e002", type:"event", name:"Vesting Order 248", date:"Oct 20 1942", desc:"Union Banking Corporation seized. 7 Fed. Reg. 9097; F.R. Doc. 42-11568. Leo T. Crowley, Alien Property Custodian.", source:"Federal Register; NARA RG 131", x:-400, y:350 },
+    { id:"e003", type:"event", name:"Vesting Order 261", date:"Oct 28 1942", desc:"Holland-American Trading Corporation seized. 7 Fed. Reg. NARA RG 131.", source:"Federal Register; NARA RG 131", x:-550, y:400 },
+    { id:"e004", type:"event", name:"Vesting Order 370", date:"Mar 23 1943", desc:"Silesian-American Corporation seized. 8 Fed. Reg. NARA RG 131.", source:"Federal Register; NARA RG 131", x:-650, y:350 },
+    { id:"e005", type:"event", name:"Industrielleneingabe", date:"Nov 19 1932", desc:"Petition to Hindenburg signed by 20 industrialists urging Hitler's appointment. Bundesarchiv Berlin R 43 II / 26.", source:"Bundesarchiv Berlin", x:-800, y:200 },
+    { id:"e006", type:"event", name:"Omne Datum Optimum", date:"Mar 29 1139", desc:"Papal bull granting Templars tax exemption and jurisdictional autonomy. Vatican Apostolic Archive.", source:"Vatican Apostolic Archive; Hiestand no. 3", x:-900, y:100 },
+    { id:"e007", type:"event", name:"Tesla 10-K 2020", date:"Feb 8 2021", desc:"SEC EDGAR Accession 0001564590-21-004599. Fiscal year 2020 disclosure.", source:"SEC EDGAR", x:-100, y:500 },
+    { id:"e008", type:"event", name:"Palantir S-1", date:"Sept 2020", desc:"IPO registration. Reg. 333-240881. Thiel retains board control. $38B valuation.", source:"SEC EDGAR", x:600, y:350 },
+    { id:"e009", type:"event", name:"$10B Army Contract", date:"Aug 2025", desc:"DOD W52P1J-25-C-0001. Palantir awarded Army data contract.", source:"DOD contract database", x:700, y:350 },
+    { id:"e010", type:"event", name:"Politico Leak", date:"Jan 15 2026", desc:"D.O.G.E. detail lead transmits SSA metadata to SpaceX. Signal protocol.", source:"Politico, Jan 15 2026", x:400, y:450 },
+    { id:"e011", type:"event", name:"'130 Days of Elon Musk'", date:"Jun 3 2025", desc:"Senate oversight report by Sen. Elizabeth Warren. Conflicts of interest, contract awards, regulatory actions.", source:"U.S. Senate, Office of Sen. Warren", x:400, y:150 },
+    { id:"e012", type:"event", name:"PJM BRA 2025/26", date:"Jul 30 2024", desc:"Base Residual Auction Report. Capacity-market pricing for 2025/26 delivery year.", source:"PJM Interconnection", x:0, y:500 },
+    { id:"e013", type:"event", name:"EIA AEO 2024", date:"Mar 2024", desc:"Annual Energy Outlook Reference Case, Tables A2 and A8. 2027 projections cited.", source:"U.S. Energy Information Administration", x:-250, y:550 },
+    { id:"e014", type:"event", name:"NERC LTRA 2024", date:"Dec 2024", desc:"Long-Term Reliability Assessment. Grid stability projections through 2028.", source:"North American Electric Reliability Corporation", x:-400, y:500 }
+  ];
+
+  var EDGES = [
+    { source:"p001", target:"i002", kind:"ceo" },
+    { source:"p001", target:"i008", kind:"founder" },
+    { source:"p001", target:"i001", kind:"architect" },
+    { source:"p002", target:"e001", kind:"signed" },
+    { source:"p002", target:"i001", kind:"established" },
+    { source:"p003", target:"e002", kind:"signed" },
+    { source:"p003", target:"e003", kind:"signed" },
+    { source:"p003", target:"e004", kind:"signed" },
+    { source:"p004", target:"i003", kind:"director" },
+    { source:"p004", target:"e002", kind:"seized" },
+    { source:"p005", target:"e011", kind:"authored" },
+    { source:"p006", target:"i009", kind:"ceo" },
+    { source:"p006", target:"e008", kind:"ipo" },
+    { source:"p007", target:"i001", kind:"detail_lead" },
+    { source:"p007", target:"i007", kind:"breached" },
+    { source:"p007", target:"e010", kind:"leak_source" },
+    { source:"i001", target:"e001", kind:"established" },
+    { source:"i003", target:"e002", kind:"seized" },
+    { source:"i004", target:"e004", kind:"seized" },
+    { source:"i005", target:"e003", kind:"seized" },
+    { source:"i006", target:"e012", kind:"auction" },
+    { source:"i007", target:"e010", kind:"breached" },
+    { source:"i008", target:"e010", kind:"recipient" },
+    { source:"i009", target:"e009", kind:"awarded" },
+    { source:"i010", target:"e013", kind:"published" }
+  ];
+
+  var TOUR_BEATS = [
+    { id:1, title:"The Garage Realization", caption:"February 8, 2021. Tesla 10-K hits SEC EDGAR. Accession 0001564590-21-004599. The document that launched the arc: how a vehicle company became a grid-capacity charge.", camera:{x:-100,y:300,k:0.8}, highlight:["p001","i002","e007"]},
+    { id:2, title:"The Chronological Ledger", caption:"October 20, 1942. Vesting Order 248. 7 Fed. Reg. 9097. Leo T. Crowley seizes Union Banking Corporation. Prescott Bush is director. The document is the spine.", camera:{x:-450,y:250,k:0.75}, highlight:["p003","p004","i003","e002"]},
+    { id:3, title:"The Bush Network", caption:"Vesting Orders 248, 261, 370. Union Banking, Holland-American, Silesian-American. Three seizures. One family. NARA RG 131 holds the receipts.", camera:{x:-550,y:300,k:0.7}, highlight:["p003","i003","i004","i005","e002","e003","e004"]},
+    { id:4, title:"The Industrialists' Petition", caption:"November 19, 1932. Twenty industrialists sign the Industrielleneingabe urging Hindenburg to appoint Hitler. Bundesarchiv Berlin R 43 II / 26. The capital has no religion.", camera:{x:-800,y:250,k:0.8}, highlight:["e005"]},
+    { id:5, title:"The Templar Exemption", caption:"March 29, 1139. Omne Datum Optimum. Papal bull granting the Templars tax exemption and jurisdictional autonomy. Vatican Apostolic Archive. The precedent is nine centuries old.", camera:{x:-900,y:150,k:0.85}, highlight:["e006"]},
+    { id:6, title:"D.O.G.E. Establishment", caption:"January 20, 2025. EO 14158. 90 Fed. Reg. 8441. Trump signs. The Department of Government Efficiency is not a department — it is a detail. Engineers assigned to SSA.", camera:{x:150,y:250,k:0.75}, highlight:["p002","p007","i001","e001"]},
+    { id:7, title:"The Leak", caption:"January 15, 2026. Politico: 'D.O.G.E. Detail Lead Transmits SSA Metadata to SpaceX.' Bobba → Davis. Signal protocol. The accident that reads like a confession.", camera:{x:350,y:300,k:0.8}, highlight:["p007","e010","i007","i008"]},
+    { id:8, title:"Senate Oversight", caption:"June 3, 2025. Senator Warren publishes '130 Days of Elon Musk.' Conflicts of interest. Contract awards. Regulatory actions. The oversight is the documentation.", camera:{x:400,y:150,k:0.85}, highlight:["p005","e011"]},
+    { id:9, title:"The Energy Market", caption:"July 30, 2024. PJM BRA 2025/26. The capacity auction that prices the grid. EIA AEO 2024 Tables A2 and A8. The water is engineered. The waterline is filed.", camera:{x:-150,y:450,k:0.75}, highlight:["i006","i010","e012","e013","e014"]},
+    { id:10, title:"The Digital Ocean", caption:"Every claim in this board is anchored to a named, filed, publicly-verifiable primary source. Federal Register. SEC EDGAR. NARA. Vatican. Senate. The rebuttal is empirical.", camera:{x:0,y:0,k:0.55}, highlight:["p001","p002","p003","p004","p005","p006","p007","i001","i002","i003"]}
+  ];
+
+  var stage = document.getElementById("stage");
+  var world = document.getElementById("world");
+  var edgesSvg = document.getElementById("edges");
+  var cardsDiv = document.getElementById("cards");
+  var state = { x:0, y:0, k:1, dragging:false, lastX:0, lastY:0 };
+
+  function makeEl(tag, cls, txt) {
+    var el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (txt) el.textContent = txt;
+    return el;
+  }
+
+  function clearChildren(el) {
+    while (el.firstChild) { el.removeChild(el.firstChild); }
+  }
+
+  function renderCard(pin) {
+    var el = document.createElement("div");
+    el.className = "card";
+    el.id = "card-" + pin.id;
+    el.style.left = pin.x + "px";
+    el.style.top = pin.y + "px";
+    el.dataset.id = pin.id;
+
+    if (pin.type === "person") {
+      el.classList.add("cdcr-id");
+      el.appendChild(makeEl("div", "cdcr-header", "PERSON OF RECORD"));
+      var photo = makeEl("div", "cdcr-photo", "?");
+      el.appendChild(photo);
+      var info = makeEl("div", "cdcr-info");
+      info.appendChild(makeEl("div", "cdcr-name", pin.name));
+      var det = makeEl("div", "cdcr-details");
+      det.appendChild(document.createTextNode((pin.years || "") + "\n"));
+      det.appendChild(document.createElement("br"));
+      det.appendChild(document.createTextNode(pin.role));
+      info.appendChild(det);
+      el.appendChild(info);
+      el.appendChild(makeEl("div", "cdcr-stamp", "CITATION FILED"));
+    } else if (pin.type === "institution") {
+      var hdr = makeEl("div", "card-header");
+      hdr.appendChild(makeEl("div", "card-title", pin.name));
+      el.appendChild(hdr);
+      el.appendChild(makeEl("div", "card-body", pin.desc));
+      var foot = makeEl("div", "card-footer");
+      foot.textContent = "Related: " + (pin.related || []).join(", ");
+      el.appendChild(foot);
+    } else if (pin.type === "event") {
+      var hdr2 = makeEl("div", "card-header");
+      hdr2.appendChild(makeEl("div", "card-title", pin.name));
+      hdr2.appendChild(makeEl("div", "card-subtitle", pin.date));
+      el.appendChild(hdr2);
+      el.appendChild(makeEl("div", "card-body", pin.desc));
+      var foot2 = makeEl("div", "card-footer");
+      foot2.textContent = "Source: " + pin.source;
+      el.appendChild(foot2);
+    }
+
+    el.addEventListener("click", function() { showInfo(pin); });
+    return el;
+  }
+
+  function renderPin(pin) {
+    var p = document.createElement("div");
+    p.className = "pin " + (pin.type === "event" ? "yellow" : "red");
+    p.style.left = (pin.x + 140) + "px";
+    p.style.top = (pin.y - 6) + "px";
+    return p;
+  }
+
+  PINS.forEach(function(pin) {
+    cardsDiv.appendChild(renderCard(pin));
+    cardsDiv.appendChild(renderPin(pin));
+  });
+
+  function renderEdges() {
+    clearChildren(edgesSvg);
+    EDGES.forEach(function(edge) {
+      var s = PINS.find(function(p){ return p.id === edge.source; });
+      var t = PINS.find(function(p){ return p.id === edge.target; });
+      if (!s || !t) return;
+      var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", s.x + 140);
+      line.setAttribute("y1", s.y + 80);
+      line.setAttribute("x2", t.x + 140);
+      line.setAttribute("y2", t.y + 80);
+      line.setAttribute("class", "string " + (edge.document ? "doc" : ""));
+      edgesSvg.appendChild(line);
+    });
+  }
+  renderEdges();
+
+  function updateTransform() {
+    world.style.transform = "translate(" + state.x + "px," + state.y + "px) scale(" + state.k + ")";
+    document.getElementById("zoom-indicator").textContent = Math.round(state.k * 100) + "%";
+  }
+  updateTransform();
+
+  stage.addEventListener("mousedown", function(e) {
+    if (e.target.closest(".card") || e.target.closest(".btn")) return;
+    state.dragging = true; state.lastX = e.clientX; state.lastY = e.clientY;
+  });
+  window.addEventListener("mousemove", function(e) {
+    if (!state.dragging) return;
+    state.x += e.clientX - state.lastX;
+    state.y += e.clientY - state.lastY;
+    state.lastX = e.clientX; state.lastY = e.clientY;
+    updateTransform();
+  });
+  window.addEventListener("mouseup", function() { state.dragging = false; });
+
+  stage.addEventListener("wheel", function(e) {
+    e.preventDefault();
+    var zoomSpeed = 0.001;
+    var newK = state.k * (1 - e.deltaY * zoomSpeed);
+    newK = Math.max(0.3, Math.min(3, newK));
+    var rect = stage.getBoundingClientRect();
+    var mx = e.clientX - rect.left, my = e.clientY - rect.top;
+    state.x = mx - (mx - state.x) * (newK / state.k);
+    state.y = my - (my - state.y) * (newK / state.k);
+    state.k = newK;
+    updateTransform();
+  }, { passive: false });
+
+  document.getElementById("zoom-in").addEventListener("click", function() {
+    state.k = Math.min(3, state.k * 1.2); updateTransform();
+  });
+  document.getElementById("zoom-out").addEventListener("click", function() {
+    state.k = Math.max(0.3, state.k / 1.2); updateTransform();
+  });
+  document.getElementById("reset-view").addEventListener("click", function() {
+    state.x = 0; state.y = 0; state.k = 1; updateTransform();
+  });
+
+  var infoPanel = document.getElementById("info-panel");
+  function showInfo(pin) {
+    document.getElementById("info-title").textContent = pin.name;
+    var body = document.getElementById("info-body");
+    clearChildren(body);
+    if (pin.type === "person") {
+      if (pin.years) body.appendChild(document.createTextNode("Years: " + pin.years + "\n\n"));
+      body.appendChild(document.createTextNode("Role: " + pin.role));
+    } else if (pin.type === "institution") {
+      body.appendChild(document.createTextNode(pin.desc));
+    } else if (pin.type === "event") {
+      body.appendChild(document.createTextNode("Date: " + pin.date + "\n\n" + pin.desc));
+    }
+    document.getElementById("info-citation").textContent = (pin.source || "");
+    infoPanel.style.display = "block";
+  }
+
+  stage.addEventListener("click", function(e) {
+    if (!e.target.closest(".card")) infoPanel.style.display = "none";
+  });
+
+  var tourState = { active:false, currentBeat:0 };
+  var tourOverlay = document.getElementById("tour-overlay");
+  var tourControls = document.getElementById("tour-controls");
+
+  function showBeat(idx) {
+    var beat = TOUR_BEATS[idx];
+    if (!beat) return;
+    document.getElementById("tour-title").textContent = beat.title;
+    document.getElementById("tour-desc").textContent = beat.caption;
+    var start = { x: state.x, y: state.y, k: state.k };
+    var end = { x: -beat.camera.x * beat.camera.k + stage.clientWidth/2 - 140*beat.camera.k,
+                y: -beat.camera.y * beat.camera.k + stage.clientHeight/2 - 80*beat.camera.k,
+                k: beat.camera.k };
+    var startTime = performance.now();
+    function step(now) {
+      var t = Math.min(1, (now - startTime) / 800);
+      var ease = t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2,2)/2;
+      state.x = start.x + (end.x - start.x) * ease;
+      state.y = start.y + (end.y - start.y) * ease;
+      state.k = start.k + (end.k - start.k) * ease;
+      updateTransform();
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+    document.querySelectorAll(".card").forEach(function(c) { c.style.boxShadow = ""; });
+    (beat.highlight || []).forEach(function(id) {
+      var c = document.getElementById("card-" + id);
+      if (c) c.style.boxShadow = "0 0 0 3px var(--spray-red), 0 4px 16px rgba(255,0,0,0.3)";
+    });
+  }
+
+  function startTour() {
+    tourState.active = true; tourState.currentBeat = 0;
+    tourOverlay.classList.add("active");
+    tourControls.classList.add("active");
+    showBeat(0);
+  }
+  function nextBeat() {
+    if (tourState.currentBeat < TOUR_BEATS.length - 1) {
+      tourState.currentBeat++; showBeat(tourState.currentBeat);
+    } else { endTour(); }
+  }
+  function prevBeat() {
+    if (tourState.currentBeat > 0) { tourState.currentBeat--; showBeat(tourState.currentBeat); }
+  }
+  function endTour() {
+    tourState.active = false;
+    tourOverlay.classList.remove("active");
+    tourControls.classList.remove("active");
+    document.querySelectorAll(".card").forEach(function(c) { c.style.boxShadow = ""; });
+  }
+
+  document.getElementById("tour-trigger").addEventListener("click", startTour);
+  document.getElementById("tour-next").addEventListener("click", nextBeat);
+  document.getElementById("tour-next-btn").addEventListener("click", nextBeat);
+  document.getElementById("tour-prev").addEventListener("click", prevBeat);
+  document.getElementById("tour-close").addEventListener("click", endTour);
+
+  var titleEl = document.getElementById("intro-title");
+  var subtitleEl = document.getElementById("intro-subtitle");
+  var authorEl = document.getElementById("intro-author");
+  var intro = document.getElementById("intro");
+  var TITLE_TEXT = "THE DIGITAL OCEAN";
+
+  function typewriter(el, text, speed, cb) {
+    var i = 0;
+    function tick() {
+      if (i < text.length) { el.textContent += text.charAt(i); i++; setTimeout(tick, speed); }
+      else if (cb) cb();
+    }
+    tick();
+  }
+
+  setTimeout(function() { typewriter(titleEl, TITLE_TEXT, 60, function() {
+    setTimeout(function() { subtitleEl.classList.add("visible"); }, 400);
+    setTimeout(function() { authorEl.classList.add("visible"); }, 800);
+    setTimeout(function() { intro.style.opacity = "0"; intro.style.transition = "opacity 1s"; }, 3000);
+    setTimeout(function() { intro.style.display = "none"; }, 4000);
+  });}, 600);
+
+})();
+</script>
+</body>
+</html>
