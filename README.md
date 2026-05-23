@@ -10,7 +10,7 @@
 
 ## Enter the Evidence Board
 
-**[Click here to open the interactive Corkboard →](https://zombie760.github.io/digital-ocean/corkboard/)**
+**[Click here to open the interactive Corkboard →](https://zombie760.github.io/digital-ocean)**
 
 30+ filed documents across Federal Register, SEC EDGAR, NARA, Vatican Apostolic Archive, Senate records, and energy regulators. Drag the board. Pull a thread. Click any pin to see the primary-source citation and archive location. Every pin is a filed document.
 
